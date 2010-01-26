@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "plain_option_parser"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{a heroku-like option parser}
+    gem.description = %Q{Parse command-line options in style}
     gem.email = "kyle@kylemaxwell.com"
     gem.homepage = "http://github.com/fizx/plain_option_parser"
     gem.authors = ["Kyle Maxwell"]
