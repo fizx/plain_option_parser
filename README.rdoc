@@ -1,6 +1,6 @@
 = plain_option_parser
 
-Description goes here.
+Simple heroku-style option parser for ruby.
 
 == Note on Patches/Pull Requests
  
