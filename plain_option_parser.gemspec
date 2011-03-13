@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{plain_option_parser}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kyle Maxwell"]
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/plain_option_parser.rb",
+    "plain_option_parser.gemspec",
     "spec/plain_option_parser_spec.rb",
     "spec/spec_helper.rb"
   ]
