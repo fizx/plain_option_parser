@@ -5,7 +5,7 @@ class PlainOptionParser
     @commands = []
     desc "Prints help text for your command"
     cmd "help" do
-      viable, remaining = commands_for_args(args[1, args.length] || [])
+      viable, remaining = commands_for_args(@args[1, @args.length] || [])
       if viable.length == 0
         no_match
       else
@@ -16,6 +16,7 @@ class PlainOptionParser
   end
 
   def start(args)
+    @args = args
     viable, remaining = commands_for_args(args)
     if viable.length == 1
       viable[0].last.call(*remaining)
