@@ -83,10 +83,11 @@ private
     args.each_with_index do |arg, i|
       @commands.each do |cmd|
         name, desc, additional, block = cmd
-        viable.delete(cmd) if name[i] != arg
+        viable.delete(cmd) if name[i] != arg && !name[i].to_s.start_with?("[")
       end
       if viable.length == 1
-        return [viable, args[viable[0][0].length, args.length]]
+        non_placeholder = viable[0][0].reject{|s| s.start_with?("[")}.size
+        return [viable, args[non_placeholder, args.length]]
       end
     end
     return [viable, []]
