@@ -1,24 +1,7 @@
 require 'rubygems'
 require 'rake'
-
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "plain_option_parser"
-    gem.summary = %Q{a heroku-like option parser}
-    gem.description = %Q{Parse command-line options in style}
-    gem.email = "kyle@kylemaxwell.com"
-    gem.homepage = "http://github.com/fizx/plain_option_parser"
-    gem.authors = ["Kyle Maxwell"]
-    gem.add_development_dependency "rspec", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
-end
-
 require 'spec/rake/spectask'
+
 Spec::Rake::SpecTask.new(:spec) do |spec|
   spec.libs << 'lib' << 'spec'
   spec.spec_files = FileList['spec/**/*_spec.rb']
@@ -30,11 +13,9 @@ Spec::Rake::SpecTask.new(:rcov) do |spec|
   spec.rcov = true
 end
 
-task :spec => :check_dependencies
-
 task :default => :spec
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
